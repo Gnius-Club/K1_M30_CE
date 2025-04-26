@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 30</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+         .activity.active .banner {
+             background-color: #AED6F1; /* Slightly different color when active */
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 30: ¡El Tren Explorador Llega al CODE SQUAD!</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Set LEGO Coding Express (tren, vías rectas, vías curvas, ladrillos de acción rojo y amarillo) y 10 iBricks por cada pareja. Asegúrate de que los trenes tengan baterías o estén cargados.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡Una Sorpresa sobre Rieles! ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Dar la bienvenida, introducir al Coding Express como nuevo miembro/herramienta del CODE SQUAD y despertar la curiosidad.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda al CODE SQUAD y anuncia una sorpresa especial.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Hola, super genios del CODE SQUAD! ¿Listos para una nueva aventura? ¡Hoy tengo una sorpresa increíble para ustedes! ¡Hemos estado trabajando en el cuartel general en algo súper secreto y muy veloz... algo que nos ayudará en nuestras misiones de una forma totalmente nueva!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Introduce la idea de preparar el cerebro para aprender algo nuevo.</td>
+                <td>
+                     <div class="dialogue">
+                        "Pero antes de revelar la sorpresa, ¡necesitamos que nuestros cerebros estén súper despiertos y listos para aprender! Vamos a nuestro Gimnasio Cerebral para hacer un ejercicio que nos prepara para seguir instrucciones y descubrir cosas nuevas. ¡Vamos a calentar esas neuronas!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Practicar el seguimiento de secuencias de pasos simples de forma kinestésica.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile enfatizando el seguir los pasos en orden.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡A moverse, equipo! Este baile es como un código secreto: ¡hay que seguir los pasos en el orden exacto! ¡Paso adelante, giro, aplauso! ¡Escuchen bien la música y sigan la secuencia! ¡Así entrenamos para dar instrucciones claras a nuestra sorpresa!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema - ¡Conozcan al Coding Express! -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🚂 Actividad 3: ¡Les presento al Coding Express! ⏰ Tiempo: 4 minutos</div>
+        <div class="subtitle">Objetivo: Presentar formalmente el Coding Express, explicar su función básica (moverse y detectar ladrillos) y plantear el primer reto: enseñarle a parar.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Presenta físicamente el Coding Express y narra su "origen" ligado al CODE SQUAD. Explica Push & Go y las vías.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Ta-rán! ¡CODE SQUAD, conozcan a nuestro nuevo compañero: el **Coding Express**! ¡Lo hemos construido en el cuartel general para que nos ayude a llevar mensajes y materiales importantes en nuestras misiones! Miren, es un tren muy especial. Si lo empujamos suavemente... (demuestra Push & Go) ¡se mueve solito! ¡Y sigue estas vías que podemos construir! ¡Va a ser nuestro vehículo oficial!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Explica el primer reto: necesita aprender a detenerse. Introduce el ladrillo rojo de acción. Demuestra cómo el tren reacciona al ladrillo rojo.</td>
+                <td>
+                     <div class="dialogue">
+                        "Pero hay un pequeño detalle... ¡nuestro Coding Express es tan nuevo que todavía no sabe cómo detenerse en el lugar exacto! ¡Podría pasarse de la estación! ¡Tenemos que enseñarle! Miren este ladrillo especial (muestra el ladrillo rojo). ¡Es un ladrillo de acción! Cuando el Coding Express pasa por encima de él con su sensor mágico (señala el sensor), ¡hace algo! ¡Este ladrillo rojo le dice... **¡ALTO!** (Demuestra: pon la vía, pon el ladrillo rojo, empuja el tren para que pase por encima y se detenga). ¡Wow! ¿Vieron eso? ¡Nuestro primer reto será construir un camino a una estación y usar este ladrillo rojo para que el tren se detenga justo ahí!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Ingenieros Ferroviarios en Equipo! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Formar parejas para la construcción de vías y la programación inicial del tren.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que construir vías y enseñar al tren es un trabajo para ingenieros expertos, ¡y que juntos lo harán mejor! Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Para esta misión tan importante de enseñar a nuestro Coding Express, necesitamos a los mejores ingenieros ferroviarios! ¡Y ustedes, CODE SQUAD, son perfectos! Pero construir vías y programar requiere trabajo en equipo. ¡Dos ingenieros piensan mejor que uno! ¡Busquen a su compañero o compañera de ingeniería para formar su Equipo Ferroviario!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja y estén listos para recibir sus materiales de construcción (vías, tren, ladrillos de acción, iBricks).</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Listos, Equipos Ferroviarios? ¡Manos a la obra! En un momento les daré sus materiales: vías para construir el camino, nuestro Coding Express, los ladrillos de acción mágicos, ¡y nuestros bloques gigantes para hacer la estación! ¡Prepárense para construir!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación - ¡Construye y Programa la Parada! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-codificacion')">
+        <div class="title">🛠️ Actividad 5: ¡Primera Misión: Llegar y Parar! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Construir una vía simple hacia una "estación" de iBricks y colocar el ladrillo de acción rojo para que el tren se detenga en el lugar correcto.</div>
+    </div>
+    <div id="reto-codificacion" class="content">
+        <table>
+             <!-- Paso Común: Explicación General y Entrega de Material -->
+             <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 8** "Construye tu Estación y Vía". Explica que construirán una estación con bloques y una vía simple que llegue hasta ella. Entrega materiales.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Ingenieros! Su primera misión es: ¡construir una Estación de Destino usando 2 o 3 de sus bloques gigantes! ¡Pónganlos juntos al final de su área de trabajo! Luego, usen las vías para construir un camino recto desde el inicio hasta JUSTO ANTES de la estación. ¡A construir!"
+                    </div>
+                </td>
+            </tr>
+            <!-- Contenido Específico por Nivel -->
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Misión K1: ¡Alto en la Estación!". Guía para construir vía recta (2 tramos). Objetivo: Colocar el ladrillo ROJO justo antes de los bloques (estación) para que el tren se detenga ahí.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Su camino necesita ser recto! Usen dos vías rectas para llegar casi a su estación de bloques. Ahora, tomen el ladrillo mágico ROJO. ¿Recuerdan qué hace? ¡Exacto, dice ALTO! Coloquen ese ladrillo rojo en la vía, JUSTO ANTES de llegar a los bloques. ¡Así le diremos al tren dónde parar! ¡Coloquen su ladrillo rojo!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 2 - K2 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Misión K2: ¡Sonido y Alto!". Guía para construir vía recta (3-4 tramos). Objetivo: Colocar ladrillo AMARILLO (sonido) a mitad de camino y ladrillo ROJO justo antes de la estación.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Ingenieros K2! ¡Su vía será un poco más larga! Usen 3 o 4 vías rectas. ¡Pero tenemos un paso extra! Tomen el ladrillo AMARILLO. Este hace que el tren haga ¡PIP PIP! Coloquen el ladrillo AMARILLO en medio del camino. Y luego, JUSTO ANTES de la estación de bloques, coloquen el ladrillo ROJO para que se detenga. ¡Queremos que suene y luego pare!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 2 - K3 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Misión K3: ¡Curva, Sonido y Alto!". Guía para construir vía con 1 curva (recta-curva-recta). Objetivo: Colocar ladrillo AMARILLO después de la curva y ROJO antes de la estación.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Expertos K3! ¡Su desafío incluye una CURVA! Construyan su camino usando una vía recta, luego una curva, y otra recta para llegar a la estación. Después de pasar la curva, coloquen el ladrillo AMARILLO para que haga ¡PIP PIP! Y al final, justo antes de los bloques, pongan el ladrillo ROJO para la parada final. ¡Demuestren su habilidad con las curvas!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡Prueba de Fuego! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('prueba-tren')">
+        <div class="title">🚀 Actividad 6: ¡Lanzamiento de Prueba! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Ejecutar la secuencia programada (empujar el tren) y observar si realiza las acciones esperadas (sonar, parar) en el lugar correcto.</div>
+    </div>
+    <div id="prueba-tren" class="content">
+        <table>
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 1 - K1 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 12** "¡Prueba K1: ¿Parará?!". Guía a las parejas para colocar el tren al inicio de la vía y darle un suave empujón (Push & Go). Observar si se detiene en la estación gracias al ladrillo rojo. Repetir si es necesario.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Ha llegado el momento de la verdad! Coloquen su Coding Express al principio de la vía. ¿Listos? Denle un empujoncito suave... ¡ahí va! Miren... ¿Pasó por el ladrillo rojo? ¿Se detuvo justo en la estación? ¡SIIII! ¡Lo lograron! ¡Le enseñaron a parar! Si no funcionó, revisemos dónde pusieron el ladrillo rojo. ¡Intentemos de nuevo!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 1 - K2 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 13** "¡Prueba K2: ¿Sonará y Parará?!". Guía para probar el tren. Observar si suena al pasar por el amarillo y si se detiene al pasar por el rojo en la estación. Repetir/ajustar si es necesario.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Ingenieros K2! ¡Prepárense para la prueba! Pongan el tren al inicio. ¡Empujón suave! Escuchen... ¿Hizo ¡PIP PIP! al pasar por el ladrillo amarillo? ¡Bien! Sigue avanzando... ¿Pasó por el rojo? ¿Paró en la estación? ¡DOBLE ÉXITO! ¡Fantástico! Si algo falló, revisemos la posición de los ladrillos amarillo y rojo. ¡Ajusten y prueben otra vez!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 1 - K3 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 14** "¡Prueba K3: ¿Curva, Sonido, Parada?!". Guía para probar el tren. Observar si toma la curva, suena después, y se detiene en la estación. Repetir/ajustar si es necesario.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Expertos K3! ¡La prueba final! Coloquen el tren al inicio. ¡Acción! Miren cómo toma la curva... ¡perfecto! Ahora... ¿escucharon el ¡PIP PIP! del ladrillo amarillo? ¡Sí! Y... ¿se detuvo justo en la estación con el ladrillo rojo? ¡IMPRESIONANTE! ¡Dominaron la curva y la secuencia! Si necesitan ajustar algo, ¡este es el momento! ¡Pueden probar de nuevo!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 OMITIDA -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Misión Cumplida y Próximos Pasos! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar el éxito de la primera misión con el Coding Express, reforzar el aprendizaje sobre causa-efecto (ladrillos de acción) y anticipar futuras misiones.</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Misión Cumplida!". Reúne al grupo, celebra el éxito. Realiza preguntas de reflexión sobre cómo funcionaron los ladrillos de acción.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Felicidades, ingenieros del CODE SQUAD! ¡Han completado su primera misión con el Coding Express! ¡Le enseñaron a llegar a la estación y a detenerse! ¡Y algunos hasta le enseñaron a hacer sonidos y tomar curvas! ¡Estoy muy orgulloso de ustedes! Pensemos un poquito:
+1. ¿Qué tuvimos que poner en la vía para que el tren se detuviera? (¡El ladrillo rojo!)
+2. (Para K2/K3) ¿Y qué hacía el ladrillo amarillo? (¡Hacía sonido!)
+3. ¿Fue fácil o difícil construir la vía y poner los ladrillos en el lugar correcto?
+¡Han aprendido los primeros secretos del Coding Express! ¡Imaginen todas las misiones que podremos hacer ahora con nuestro nuevo amigo! ¡Prepárense, porque esto apenas comienza! ¡Hasta la próxima aventura, CODE SQUAD!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity'); // Encuentra el contenedor de la actividad
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active'); // Remueve clase activa si se cierra
+        } else {
+             // Opcional: Cierra otros contenidos abiertos antes de abrir uno nuevo
+             // closeAllContents();
+            content.style.display = "block";
+            parentActivity.classList.add('active'); // Añade clase activa si se abre
+        }
+    }
+
+    // Función opcional para cerrar todos los demás contenidos al abrir uno
+    /*
+    function closeAllContents() {
+        var allContents = document.querySelectorAll('.content');
+        var allActivities = document.querySelectorAll('.activity');
+        allContents.forEach(function(content) {
+            content.style.display = 'none';
+        });
+         allActivities.forEach(function(activity) {
+             activity.classList.remove('active');
+         });
+    }
+    */
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        // Actualiza el texto del título H2
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        // Oculta todas las filas de contenido específico de nivel primero
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        // Muestra solo las filas del nivel seleccionado
+        // Usamos 'table-row' porque estamos mostrando/ocultando filas de tabla (<tr>)
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             el.style.display = 'table-row';
+        });
+    }
+
+    // Asegura que updateContent se ejecute cuando la página cargue
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
